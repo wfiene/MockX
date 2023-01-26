@@ -126,7 +126,7 @@ def seed_reviews():
     
     for review in reviews:
         db.session.add(review)
-    db.session.commit()
+        db.session.commit()
     
 def undo_reviews():
     if environment == "production":
