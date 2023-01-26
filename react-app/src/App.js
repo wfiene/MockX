@@ -8,6 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import GetAllItems from './components/Items/allItems';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -20,9 +21,9 @@ function App() {
     })();
   }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
+  // if (!loaded) {
+  //   return null;
+  // }
 
   return (
     <BrowserRouter>
@@ -41,7 +42,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <GetAllItems />
         </Route>
       </Switch>
     </BrowserRouter>

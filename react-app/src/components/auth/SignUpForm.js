@@ -7,6 +7,8 @@ const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
+  const [fname, setFname] = useState('')
+  const [lname, setLname] = useState('')
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const user = useSelector(state => state.session.user);
@@ -38,6 +40,14 @@ const SignUpForm = () => {
     setRepeatPassword(e.target.value);
   };
 
+  const updateFirstName = (e) => {
+    setFname(e.target.value)
+  };
+
+  const updateLastName = (e) => {
+    setLname(e.target.value)
+  };
+
   if (user) {
     return <Redirect to='/' />;
   }
@@ -65,6 +75,24 @@ const SignUpForm = () => {
           name='email'
           onChange={updateEmail}
           value={email}
+        ></input>
+      </div>
+      <div>
+        <label>First Name</label>
+        <input
+          type='text'
+          name='first name'
+          onChange={updateFirstName}
+          value={fname}
+        ></input>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type='text'
+          name='last name'
+          onChange={updateLastName}
+          value={lname}
         ></input>
       </div>
       <div>

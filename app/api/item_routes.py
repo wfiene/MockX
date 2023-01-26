@@ -10,7 +10,7 @@ def item_home():
     all_items = Item.query.all()
     return {'items': [item.to_dict() for item in all_items]}
 
-@item_bp.route('/new', methods=['POST'])
+@item_bp.route('', methods=['POST'])
 def new_item():
     form = ItemForm()
     form['csrf_token'].data = request.cookies['csrf_token']
