@@ -1,4 +1,4 @@
-from app.models import db, Item, environment, SCHEMA
+from app.models import db, Item, environment, SCHEMA, Review, User
 
 def seed_items():
     rtx_4090 = Item(
