@@ -56,7 +56,7 @@ def item_by_id(id):
         if request.method == 'DELETE':
             db.session.delete(item)
             db.session.commit()
-            return {'message': 'Item Deleted!'}
+            return {'message': f'{item.name} Deleted!'}
         
         
     return { "error": "Item not found", "errorCode" : 404 }, 404
