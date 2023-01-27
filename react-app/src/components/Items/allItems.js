@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from 'react-router-dom'
 import { getItems } from "../../store/items"
+import './items.css'
 
 const GetAllItems = () => {
     const itemObj = useSelector(state => state.items.allItems)
@@ -9,7 +10,7 @@ const GetAllItems = () => {
     console.log('----------------Items------------', items)
     const dispatch = useDispatch()
 
-    useEffect (() => {
+    useEffect(() => {
         dispatch(getItems())
     }, [dispatch])
 
@@ -18,7 +19,13 @@ const GetAllItems = () => {
             <div className="frame">
                 {items.map(item => (
                     <div key={item.id}>
-                        <div>{item.name}</div>
+                        <div className="item-card">
+                            <div>
+                                <img className="item-image" src={item.image} />
+                            </div>
+                            <div className="m20">{item.name}</div>
+                            <div className="m20">${item.price}</div>
+                        </div>
                     </div>
                 ))}
             </div>

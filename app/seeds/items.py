@@ -29,7 +29,7 @@ def seed_items():
         name='G-Shock', category='watch', color='black-gold', image='https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/G/GA/GA1/GA-110GB-1A/assets/GA-110GB-1A_Seq1.png', price=150, owner_id=2
     )
     hat = Item(
-        name='Rebel 8 Mesh Cap', category='hats', color='black', image='https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/G/GA/GA1/GA-110GB-1A/assets/GA-110GB-1A_Seq1.png', price=40, owner_id=3
+        name='Rebel 8 Mesh Cap', category='hats', color='black', image='https://cdn.shopify.com/s/files/1/0239/1371/products/LogoScriptMeshcap_Porduct2.jpg?v=1568853998', price=40, owner_id=3
     )
     
     db.session.add(rtx_4090)

@@ -1,0 +1,43 @@
+#outer-items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    
+  }
+  
+  .frame {
+    /* margin-top: 100px; */
+    display: flex;
+    flex-direction: row;
+    padding: 50px 45px;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    justify-content: center;
+    width: 85%;
+  }
+
+  .item-card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+    height: fit-content;
+  }
+
+  .item-image {
+    margin: 20px;
+    border-radius: 15px;
+    /* object-fit: fill; */
+    object-fit: cover;
+    width: 220px;
+    height: 200px;
+    /* overflow: hidden; */
+  }
+
+  .m20 {
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
