@@ -22,7 +22,6 @@ def new_item():
         db.session.add(new_item)
         db.session.commit()
         return new_item.to_dict()
-    
     else:
         return form.errors
     
