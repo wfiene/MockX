@@ -10,11 +10,11 @@
     /* margin-top: 100px; */
     display: flex;
     flex-direction: row;
-    padding: 50px 45px;
+    padding: 50px 50px;
     flex-wrap: wrap;
     /* justify-content: space-between; */
     justify-content: center;
-    width: 85%;
+    width: 55%;
   }
 
   .item-card {
@@ -23,16 +23,24 @@
     margin: 20px;
     margin-bottom: 30px;
     border: 1px solid grey;
-    height: fit-content;
+    /* height: fit-content; */
+    width: 150px;
+    font-family: sans-serif;
   }
 
+  /* .item-card {
+    width: 20%;
+    box-sizing: border-box;
+  } */
+
   .item-image {
-    margin: 20px;
+    margin-top: 10px;
+    margin-left: 18px;
     border-radius: 15px;
     /* object-fit: fill; */
     object-fit: cover;
-    width: 220px;
-    height: 200px;
+    width: 120px;
+    height: 100px;
     /* overflow: hidden; */
   }
 

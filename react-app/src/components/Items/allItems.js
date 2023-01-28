@@ -7,7 +7,7 @@ import './items.css'
 const GetAllItems = () => {
     const itemObj = useSelector(state => state.items.allItems)
     const items = Object.values(itemObj)
-    console.log('----------------Items------------', items)
+    // console.log('----------------Items------------', items)
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -19,13 +19,15 @@ const GetAllItems = () => {
             <div className="frame">
                 {items.map(item => (
                     <div key={item.id}>
-                        <div className="item-card">
-                            <div>
-                                <img className="item-image" src={item.image} />
+                        <NavLink to={`/items/${item.id}`} >
+                            <div className="item-card">
+                                <div>
+                                    <img className="item-image" src={item.image} />
+                                </div>
+                                <div className="m20">{item.name}</div>
+                                <div className="m20">${item.price}</div>
                             </div>
-                            <div className="m20">{item.name}</div>
-                            <div className="m20">${item.price}</div>
-                        </div>
+                        </NavLink>
                     </div>
                 ))}
             </div>
