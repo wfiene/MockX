@@ -6,9 +6,9 @@ import { getOneItem } from "../../store/items"
 const ItemDetails = () => {
     const itemObj = useSelector(state => state.items.oneItem)
     const item = Object.values(itemObj)[0]
-    console.log("------------item------------", item)
+    // console.log("------------item------------", item)
     let { itemId } = useParams()
-    console.log("--------item-id---------", itemId)
+    // console.log("--------item-id---------", itemId)
     const dispatch = useDispatch()
     const [isLoaded, setIsLoaded] = useState(false)
 
@@ -22,10 +22,10 @@ const ItemDetails = () => {
         <div id="outer-most-details">
             <div id="item-page">
                 <div id="header">
-                    <h2>{item.name}</h2>
+                    <h2>{item?.name}</h2>
                 </div>
                 <div className="detail-image">
-                    {item.image && <img src={item.image} />}
+                    {item?.image && <img src={item?.image} />}
                 </div>
             </div>
         </div>
