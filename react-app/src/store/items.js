@@ -3,9 +3,9 @@
 const GET_ITEMS = 'items/getItems'
 const ONE_ITEM = 'item/oneItem'
 const USER_ITEMS = 'items/userItems'
-const CREATE_ITEM = 'item/createItem'
-const EDIT_ITEM = 'item/editItem'
-const DELETE_ITEM = 'item/deleteItem'
+const CREATE_ITEM = 'items/createItem'
+const EDIT_ITEM = 'items/editItem'
+const DELETE_ITEM = 'items/deleteItem'
 
 //-------------  Actions -------------//
 
@@ -70,10 +70,11 @@ export const getItems = () => async (dispatch) => {
 
 export const getOneItem = (itemId) => async (dispatch) => {
     const res = await fetch(`/api/items/${itemId}`)
+    console.log('--------item-id-thunk--------', itemId)
 
     if (res.ok) {
-        const data = res.json()
-        dispatch(loadOneItem(data))
+        const data = await res.json()
+        await dispatch(loadOneItem(data))
         return data
     }
 }
@@ -131,7 +132,7 @@ const itemReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ITEMS:
             {
-                newState = { allItems: { ...state.allItems }, oneItem: {} }
+                newState = { ...state, allItems: { ...state.allItems } }
                 action.items.forEach(item => {
                     newState.allItems[item.id] = item
                 })
@@ -139,8 +140,8 @@ const itemReducer = (state = initialState, action) => {
             }
         case ONE_ITEM:
             {
-                newState = { ...state, oneItem: { ...state.oneItem } }
-                newState.oneItem = { ...action.item }
+                newState = { ...state, oneItem: {} }
+                newState.oneItem[action.item.id] = action.item
                 return newState
             }
         case USER_ITEMS:
