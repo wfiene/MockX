@@ -18,14 +18,14 @@ const GetAllItems = () => {
         <div id="outer-items">
             <div className="frame">
                 {items.map(item => (
-                    <div key={item.id}>
-                        <NavLink className='pt' to={`/items/${item.id}`} >
+                    <div key={item?.id}>
+                        <NavLink className='pt' to={`/items/${item?.id}`} >
                             <div className="item-card">
                                 <div>
-                                    <img className="item-image" src={item.image} />
+                                    <img className="item-image" src={item?.image} />
                                 </div>
-                                <div className="m20">{item.name}</div>
-                                <div className="m20">${item.price}</div>
+                                <div className="m20">{item?.name}</div>
+                                <div className="m20">${item?.price}</div>
                             </div>
                         </NavLink>
                     </div>

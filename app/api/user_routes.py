@@ -27,6 +27,6 @@ def user(id):
 @user_routes.route('/<int:id>/items')
 @login_required
 def items_by_user_id(id):
-    user = User.query.get(id)
-    items = Item.query.filter(Item.users.contains(user)).all()
+    # user = User.query.get(id)
+    items = Item.query.filter(Item.owner_id == id).all()
     return {'userItems': [item.to_dict() for item in items]}

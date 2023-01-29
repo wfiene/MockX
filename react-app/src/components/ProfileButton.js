@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, NavLink } from 'react-router-dom'
 import './nav.css'
+import CurrentUserItems from "./Items/userItems";
 
 
 const ProfileButton = () => {
@@ -33,7 +34,8 @@ const ProfileButton = () => {
             </button>
             {showMenu && (
                 <div className="profile-dropdown">
-                <div>Hello {user.firstName}</div>
+                <div>Hello {user.username}</div>
+                <NavLink to={`/users/${user.id}/items`}>User Items</NavLink>
                 <div><LogoutButton /></div>
                 </div>
             )}

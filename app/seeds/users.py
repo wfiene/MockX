@@ -4,17 +4,17 @@ from app.models import db, User, environment, SCHEMA, Item, Review
 # Adds a demo user, you can add other users here if you want
 def seed_users():
     demo = User(
-        username='Demo', first_name='Demo', last_name='Lition', email='demo@aa.io', password='password')
+        username='Demo', email='demo@aa.io', password='password')
     marnie = User(
-        username='marnie', first_name='Marnie', last_name='Lux', email='marnie@aa.io', password='password')
+        username='marnie', email='marnie@aa.io', password='password')
     bobbie = User(
-        username='bobbie', first_name='Bobbie', last_name='Ricky', email='bobbie@aa.io', password='password')
+        username='bobbie', email='bobbie@aa.io', password='password')
     matt = User(
-        username='matty', first_name='Mathew', last_name='Waters', email='matt@aa.io', password='password')
+        username='matty', email='matt@aa.io', password='password')
     john = User(
-        username='johnny', first_name='John', last_name='Smith', email='john@aa.io', password='password')
+        username='johnny', email='john@aa.io', password='password')
     mark = User(
-        username='mark', first_name='Mark', last_name='Baker', email='mark@aa.io', password='password')
+        username='mark', email='mark@aa.io', password='password')
     
     db.session.add(demo)
     db.session.add(marnie)

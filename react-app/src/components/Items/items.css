@@ -145,3 +145,11 @@
   text-decoration: none;
   color: black;
 }
+
+#outer-most-my-items {
+  margin-top: 50px;
+  margin-left: 50px;
+  display: flex;
+  justify-content: center;
+  /* border: 10px solid red; */
+}

@@ -28,7 +28,7 @@ const ItemDetails = () => {
                 <div >
                     {item?.image && <img className="detail-image" src={item?.image} />}
                 </div>
-                <h3>${item?.price}</h3>
+                <h3>MSRP ${item?.price}</h3>
             </div>
             <div className="decoration-side">
                 <div className="outline-box">
