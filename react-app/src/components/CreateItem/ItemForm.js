@@ -1,15 +1,25 @@
-import React, {useEffect, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {useHistory} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { createItem } from '../../store/items'
 
-const CreateItemForm = ({setShowModal}) => {
+const CreateItemForm = ({ setShowModal }) => {
     const user = useSelector(state => state.session.user)
+    console.log('----------user---------', user)
     const dispatch = useDispatch()
     const history = useHistory()
+    const options = [
+        { value: 'computer parts', label: 'computer parts' },
+        { value: 'gaming console', label: 'gaming console' },
+        { value: 'shoes', label: 'shoes' },
+        { value: 'watch', label: 'watch' },
+        { value: 'hats', label: 'hats' },
+        { value: 'apparel', label: 'apparel' },
+        { value: 'other', label: 'other' }
+    ]
 
     const [name, setName] = useState('')
-    const [category, setCategory] = useState('')
+    const [category, setCategory] = useState(options[0].value)
     const [color, setColor] = useState('')
     const [image, setImage] = useState('')
     const [price, setPrice] = useState('')
@@ -17,10 +27,11 @@ const CreateItemForm = ({setShowModal}) => {
     const [errors, setErrors] = useState(false)
 
     const updateName = (e) => setName(e.target.value)
-    const updateCategory = (e) => setCategory(e.target.value)
+    // const updateCategory = (e) => setCategory(e.target.value)
     const updateColor = (e) => setColor(e.target.value)
     const updateImage = (e) => setImage(e.target.value)
     const updatePrice = (e) => setPrice(e.target.value)
+
 
     useEffect(() => {
         const errors = []
@@ -34,18 +45,19 @@ const CreateItemForm = ({setShowModal}) => {
         if (!price || price < 5) errors.push('Must provide a price more than $5')
         setValidationErrors(errors)
     }, [name, category, color, image, price])
-
+    
+    let payload = {
+        name,
+        category,
+        color,
+        image,
+        price,
+        owner_id: user.id
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
         setErrors(true)
         if (!validationErrors.length) {
-            const payload = {
-                name,
-                category,
-                color,
-                image,
-                price,
-            }
 
             let createdItem = await dispatch(createItem(payload))
             if (createdItem) {
@@ -70,12 +82,19 @@ const CreateItemForm = ({setShowModal}) => {
                             onChange={updateName}
                         />
 
-                        <input
+                        <select value={category} onChange={e => setCategory(e.target.value)}>
+                            {options.map(option => (
+                                <option key={option.value} value={option.value}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                        {/* <input
                             type='text'
                             placeholder='category'
                             value={category}
                             onChange={updateCategory}
-                        />
+                        /> */}
 
                         <input
                             type='text'

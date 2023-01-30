@@ -89,11 +89,11 @@ export const getItemsByUserId = (userId) => async (dispatch) => {
     }
 }
 
-export const createItem = (item) => async (dispatch) => {
+export const createItem = (payload) => async (dispatch) => {
     const res = await fetch('/api/items', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
+        body: JSON.stringify(payload)
     });
 
     if (res.ok) {
