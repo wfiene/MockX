@@ -1,0 +1,125 @@
+.login-signup-form-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 92vh;
+    width: 100vw; */
+    /* background-size: cover; */
+    /* background-color: rgb(247, 246, 246); */
+}
+
+.login-from-and-qr-code {
+    /* border: 2px solid red; */
+    /* background-color: rgb(246, 243, 242); */
+    border-radius: 5px;
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    padding: 1rem;
+    min-width: 20rem;
+    min-height: 15rem;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid lightgrey;
+    margin-top: 100px;
+    background-color: rgb(244, 244, 244);
+}
+
+.login-form-container {
+    margin: 10px;
+    /* width: 30%; */
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.label-name {
+    font-size: 12px;
+    color: black;
+}
+
+.register {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+}
+
+.register-text {
+    font-size: 12px;
+    margin: 1px;
+}
+
+.qr-code {
+    width: 175px;
+    border-radius: 5px;
+}
+
+.qr-code-container {
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.qr-code-login {
+    font-size: 25px;
+    margin: 10px 0;
+    color: white;
+    font-weight: bold;
+}
+
+.qr-code-text {
+    font-size: 16px;
+    text-align: center;
+    color: black;
+}
+
+.welcome-back {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.welcome-back-text {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.label {
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    width: 18rem;
+    padding: 5px;
+}
+
+.user-buttons {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.submit-button{
+    width: 100%;
+}
+/* 
+#left,
+#right {
+    max-width: 50%;
+} */
+
+/* #right {
+    border-radius: 0 5px 5px 0;
+    border-left:  1px solid orangered;;
+}
+
+#left {
+    border-radius: 5px 0 0 5px ;
+    border-right: 1px solid orangered;
+} */

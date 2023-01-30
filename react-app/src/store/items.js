@@ -84,22 +84,22 @@ export const getItemsByUserId = (userId) => async (dispatch) => {
 
     if (res.ok) {
         const data = await res.json()
-        dispatch(loadUserItems(data))
+        await dispatch(loadUserItems(data))
         return data
     }
 }
 
-export const createItem = (item) => async (dispatch) => {
+export const createItem = (payload) => async (dispatch) => {
     const res = await fetch('/api/items', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(item)
+        body: JSON.stringify(payload)
     });
 
     if (res.ok) {
-        const item = await res.json()
-        await dispatch(addItem(item.id))
-        return item
+        const data = await res.json()
+        await dispatch(addItem(data))
+        return data
     }
 }
 
@@ -111,7 +111,8 @@ export const editItem = (item) => async (dispatch) => {
     });
     if (res.ok) {
         const data = await res.json()
-        dispatch(changeItem(data))
+        await dispatch(changeItem(data))
+        return data
     }
 }
 
@@ -120,7 +121,7 @@ export const deleteItem = (itemId) => async (dispatch) => {
         method: 'DELETE'
     });
     if (res.ok) {
-        dispatch(removeItem(itemId))
+        await dispatch(removeItem(itemId))
     }
 }
 
@@ -146,7 +147,7 @@ const itemReducer = (state = initialState, action) => {
             }
         case USER_ITEMS:
             {
-                newState = { allItems: { ...state.allItems }, oneItem: {} }
+                newState = { allItems: {}, oneItem: {} }
                 action.items.userItems.forEach(item => {
                     newState.allItems[item.id] = item
                 });
@@ -154,8 +155,10 @@ const itemReducer = (state = initialState, action) => {
             }
         case CREATE_ITEM:
             {
-                newState = { allItems: { ...state.allItems }, oneItem: { ...state.oneItem } }
+                newState = { ...state }
+                newState.allItems = { ...state.allItems }
                 newState.allItems[action.item.id] = action.item
+                newState.oneItem = action.item
                 return newState
             }
         case EDIT_ITEM:

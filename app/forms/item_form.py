@@ -9,4 +9,5 @@ class ItemForm(FlaskForm):
     color = StringField('Color', validators=[DataRequired()])
     image = StringField('Image', validators=[DataRequired(), URL()])
     price = IntegerField('Price', validators=[DataRequired()])
+    owner_id = IntegerField('Owner')
     submit = SubmitField('submit')
