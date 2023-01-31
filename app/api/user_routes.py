@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 from flask_login import login_required
-from app.models import User, Item
+from app.models import User, Item, Review
 
 user_routes = Blueprint('users', __name__)
 
@@ -30,3 +30,9 @@ def items_by_user_id(id):
     # user = User.query.get(id)
     items = Item.query.filter(Item.owner_id == id).all()
     return {'userItems': [item.to_dict() for item in items]}
+
+@user_routes.route('/reviews')
+@login_required
+def reviews_by_user_id(id):
+    reviews = Review.query.filter(Review.user_id == id).all()
+    return {'userReviews': [review.to_dict() for review in reviews]}

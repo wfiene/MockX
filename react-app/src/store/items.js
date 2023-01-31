@@ -70,7 +70,7 @@ export const getItems = () => async (dispatch) => {
 
 export const getOneItem = (itemId) => async (dispatch) => {
     const res = await fetch(`/api/items/${itemId}`)
-    console.log('--------item-id-thunk--------', itemId)
+    // console.log('--------item-id-thunk--------', itemId)
 
     if (res.ok) {
         const data = await res.json()

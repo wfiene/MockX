@@ -153,3 +153,8 @@
   justify-content: center;
   /* border: 10px solid red; */
 }
+
+.reviews {
+  /* border: 1px solid black; */
+  padding: 10px;
+}
