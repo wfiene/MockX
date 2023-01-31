@@ -118,7 +118,7 @@ const CreateItemForm = ({ setShowModal }) => {
                             min='5'
                             max='50000'
                         />
-                        <button type='submit'>Edit</button>
+                        <button type='submit'>List Item</button>
                         <div className='edit-item-errors'>
                             <ul>
                                 {errors && validationErrors.length > 0 && validationErrors.map(error => (
