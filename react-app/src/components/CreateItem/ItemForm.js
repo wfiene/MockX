@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createItem } from '../../store/items'
+import './create.css'
 
 const CreateItemForm = ({ setShowModal }) => {
     const user = useSelector(state => state.session.user)
@@ -70,19 +71,18 @@ const CreateItemForm = ({ setShowModal }) => {
     }
 
     return (
-        <div className='edititem-form'>
-            <div className='edititem-outer'>
-                <form onSubmit={handleSubmit}>
+                <form className='form' onSubmit={handleSubmit}>
+                    <div className='form'>
                     <h2 id='welcome-edit'>Add an Item</h2>
                     <div className='edititem-content-area'>
-                        <input
+                        <input className='input'
                             type='text'
                             placeholder='name'
                             value={name}
                             onChange={updateName}
                         />
 
-                        <select value={category} onChange={e => setCategory(e.target.value)}>
+                        <select className='input' value={category} onChange={e => setCategory(e.target.value)}>
                             {options.map(option => (
                                 <option key={option.value} value={option.value}>
                                     {option.label}
@@ -96,21 +96,21 @@ const CreateItemForm = ({ setShowModal }) => {
                             onChange={updateCategory}
                         /> */}
 
-                        <input
+                        <input className='input'
                             type='text'
                             placeholder='color'
                             value={color}
                             onChange={updateColor}
                         />
 
-                        <input
+                        <input className='input'
                             type='url'
                             placeholder='image-url'
                             value={image}
                             onChange={updateImage}
                         />
 
-                        <input
+                        <input className='input'
                             type='number'
                             placeholder='price'
                             value={price}
@@ -125,11 +125,9 @@ const CreateItemForm = ({ setShowModal }) => {
                                     <li className='error-messages' key={error}>{error}</li>))}
                             </ul>
                         </div>
+                        </div>
                     </div>
                 </form>
-            </div>
-        </div>
-    )
-}
+)}
 
 export default CreateItemForm

@@ -65,6 +65,10 @@
     background-color: white;
     width: 150px;
     border-radius: 5px;
+}
 
-
+.user-links {
+    display: flex;
+    justify-content: center;
+    height: fit-content;
 }

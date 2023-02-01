@@ -1,0 +1,33 @@
+.create-button {
+    height: 22px;
+    display: flex;
+    margin-top: 15.5px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    width: 250px;
+    text-align: center;
+    /* background-color: green; */
+}
+
+.edititem-content-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border-radius: 25px; */
+}
+
+.input {
+    margin: 5px;
+    width: 80%;
+
+}
+
+.modal {
+    border-radius: 25px;
+}

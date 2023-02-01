@@ -14,7 +14,7 @@ const NavBar = () => {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div>
+      <div className='user-links'>
         {/* <CurrentUserItems /> */}
         <CreateItemModal />
         <ProfileButton />
