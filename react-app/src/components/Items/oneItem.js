@@ -72,7 +72,7 @@ const ItemDetails = () => {
                         outlined={true} 
                         />
                         <div>{review.comment}</div>
-                        {users.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )}
+                        {users?.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )}
                         </div>
                     ))}
                 </div>)}

@@ -7,11 +7,11 @@ const EditItemForm = ({ item, setShowModal }) => {
     const dispatch = useDispatch()
     const history = useHistory();
 
-    const [name, setName] = useState(item.name)
-    const [category, setCategory] = useState(item.category)
-    const [color, setColor] = useState(item.color)
-    const [image, setImage] = useState(item.image)
-    const [price, setPrice] = useState(item.price)
+    const [name, setName] = useState(item?.name)
+    const [category, setCategory] = useState(item?.category)
+    const [color, setColor] = useState(item?.color)
+    const [image, setImage] = useState(item?.image)
+    const [price, setPrice] = useState(item?.price)
     const [validationErrors, setValidationErrors] = useState([])
     const [errors, setErrors] = useState(false)
 
