@@ -104,7 +104,7 @@ const CreateItemForm = ({ setShowModal }) => {
                         />
 
                         <input
-                            type='text'
+                            type='url'
                             placeholder='image-url'
                             value={image}
                             onChange={updateImage}

@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import GetAllItems from './components/Items/allItems';
 import ItemDetails from './components/Items/oneItem';
 import CurrentUserItems from './components/Items/userItems';
+import UserReviews from './components/UserReviews/userReviews';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path='/users/:userId/items' exact={true}>
             <CurrentUserItems />
+          </Route>
+          <Route path='/users/:userId/reviews' exact={true}>
+            <UserReviews />
           </Route>
           <Route path='/sign-up' exact={true}>
             <SignUpForm />
