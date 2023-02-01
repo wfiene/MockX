@@ -57,7 +57,7 @@ const LoginForm = () => {
               />
             </div>
             <div className='input'>
-              <label className='label-name' htmlFor='password'>PATHWORD</label>
+              <label className='label-name' htmlFor='password'>PASSWORD</label>
               <input
                 name='password'
                 type='password'

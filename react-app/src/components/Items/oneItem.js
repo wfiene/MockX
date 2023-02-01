@@ -16,11 +16,21 @@ const ItemDetails = () => {
     // console.log("--------item-id---------", itemId)
     const dispatch = useDispatch()
     const [isLoaded, setIsLoaded] = useState(false)
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
         dispatch(getOneItem(itemId))
             .then(() => setIsLoaded(true))
     }, [dispatch, itemId])
+
+    useEffect(() => {
+        async function fetchData() {
+          const response = await fetch('/api/users/');
+          const responseData = await response.json();
+          setUsers(responseData.users);
+        }
+        fetchData();
+      }, []);
 
     let sum = 0;
     item?.reviews?.forEach(review => {
@@ -48,6 +58,7 @@ const ItemDetails = () => {
                     {item?.image && <img className="detail-image" src={item?.image} />}
                 </div>
                 <h3>MSRP ${item?.price}</h3>
+                {item?.reviews && (
                 <div>
                     {item?.reviews.map(review => (
                         <div className="reviews">
@@ -61,10 +72,10 @@ const ItemDetails = () => {
                         outlined={true} 
                         />
                         <div>{review.comment}</div>
-                        {/* <div>{review.userId}</div> */}
+                        {users.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )}
                         </div>
                     ))}
-                </div>
+                </div>)}
                 <div>
                     <ReviewFormModal />
                 </div>

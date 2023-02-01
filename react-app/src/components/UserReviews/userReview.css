@@ -1,0 +1,30 @@
+.review-box {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+    margin: 40px;
+    border: 1px solid lightgrey;
+    /* float: right; */
+    width: 300px;
+    padding: 20px;
+}
+
+.review-image {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.outer-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review-text {
+    text-align: center;
+    padding: 10px;
+}

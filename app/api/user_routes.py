@@ -31,7 +31,7 @@ def items_by_user_id(id):
     items = Item.query.filter(Item.owner_id == id).all()
     return {'userItems': [item.to_dict() for item in items]}
 
-@user_routes.route('/reviews')
+@user_routes.route('/<int:id>/reviews')
 @login_required
 def reviews_by_user_id(id):
     reviews = Review.query.filter(Review.user_id == id).all()

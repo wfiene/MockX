@@ -23,8 +23,8 @@ const NavBar = () => {
   } else {
     sessionLinks = (
       <div className='login-sign-up-row'>
-        <NavLink className='login' to='/login'>Login</NavLink>
-        <NavLink className='signup' to='sign-up'>Sign Up</NavLink>
+        <div><NavLink className='login' to='/login'>Login</NavLink></div>
+        <div><NavLink className='signup' to='sign-up'>Sign Up</NavLink></div>
       </div>
     );
   }

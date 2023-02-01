@@ -36,6 +36,7 @@ const ProfileButton = () => {
                 <div className="profile-dropdown">
                 <div>Hello {user.username}</div>
                 <NavLink to={`/users/${user.id}/items`}>User Items</NavLink>
+                <NavLink to={`/users/${user.id}/reviews`}>User Reviews</NavLink>
                 <div><LogoutButton /></div>
                 </div>
             )}
