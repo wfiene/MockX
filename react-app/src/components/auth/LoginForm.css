@@ -36,6 +36,7 @@
 }
 
 .label-name {
+    font-family: sans-serif;
     font-size: 12px;
     color: black;
 }
@@ -70,7 +71,7 @@
     margin: 10px 0;
     color: white;
     font-weight: bold;
-}
+} 
 
 .qr-code-text {
     font-size: 16px;
@@ -106,20 +107,10 @@
     flex-wrap: nowrap;
 }
 .submit-button{
-    width: 100%;
-}
-/* 
-#left,
-#right {
-    max-width: 50%;
-} */
-
-/* #right {
-    border-radius: 0 5px 5px 0;
-    border-left:  1px solid orangered;;
+    width: 300px;
+    color: blue;
 }
 
-#left {
-    border-radius: 5px 0 0 5px ;
-    border-right: 1px solid orangered;
-} */
+.welcome-back-text{
+    font-family: sans-serif;
+}

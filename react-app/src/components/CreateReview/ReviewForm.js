@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { createReviewThunk } from '../../store/review';
 import { getOneItem } from '../../store/items';
+import { DynamicStar } from 'react-dynamic-star';
 
 const ReviewForm = ({ setShowModal }) => {
     const dispatch = useDispatch()
@@ -61,7 +62,17 @@ const ReviewForm = ({ setShowModal }) => {
                         />
 
                         <div>
-                            <label>★</label>
+                            <label>
+                                <DynamicStar
+                                    rating={rating}
+                                    fullStarColor={"black"}
+                                    // emptyStarColor={'lightgrey'}
+                                    width={18}
+                                    height={30}
+
+                                    outlined={true}
+                                    />
+                            </label>
                             <input
                                 type='number'
                                 min='1'

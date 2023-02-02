@@ -46,7 +46,7 @@ const LoginForm = () => {
               ))}
             </div>
             <div className='input'>
-              <label className='label-name' htmlFor='email'>EMAIL</label>
+              <label className='label-name' htmlFor='email'>Email</label>
               <input
                 name='email'
                 type='text'
@@ -57,7 +57,7 @@ const LoginForm = () => {
               />
             </div>
             <div className='input'>
-              <label className='label-name' htmlFor='password'>PASSWORD</label>
+              <label className='label-name' htmlFor='password'>Password</label>
               <input
                 name='password'
                 type='password'
@@ -66,9 +66,9 @@ const LoginForm = () => {
                 onChange={updatePassword}
                 className='label'
               />
-              <button type='submit' className='submit-button'>Login</button>
             </div>
             <div className='user-buttons'>
+              <button type='submit' className='submit-button'>Login</button>
               <button className='submit-button' id='left' onClick={() => {
                 setEmail('demo@aa.io')
                 setPassword('password')
