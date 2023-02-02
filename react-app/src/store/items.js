@@ -6,6 +6,7 @@ const USER_ITEMS = 'items/userItems'
 const CREATE_ITEM = 'items/createItem'
 const EDIT_ITEM = 'items/editItem'
 const DELETE_ITEM = 'items/deleteItem'
+const CLEAR_ITEM = 'item/clear'
 
 //-------------  Actions -------------//
 
@@ -48,6 +49,12 @@ export const removeItem = (itemId) => {
     return {
         type: DELETE_ITEM,
         itemId
+    }
+}
+
+export const clearItem = () => {
+    return {
+        type: CLEAR_ITEM
     }
 }
 
@@ -173,6 +180,12 @@ const itemReducer = (state = initialState, action) => {
                 newState = { allItems: { ...state.allItems }, oneItem: { ...state.oneItem } }
                 delete newState.allItems[action.itemId]
                 delete newState.oneItem[action.itemId]
+                return newState
+            }
+
+        case CLEAR_ITEM:
+            {
+                newState = {allItems: {...state.allItems}, oneItem: {}}
                 return newState
             }
         default:

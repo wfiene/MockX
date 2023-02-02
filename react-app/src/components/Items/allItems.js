@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from 'react-router-dom'
-import { getItems } from "../../store/items"
+import { getItems, clearItem } from "../../store/items"
 import './items.css'
 
 const GetAllItems = () => {
@@ -18,7 +18,7 @@ const GetAllItems = () => {
         <div id="outer-items">
             <div className="frame">
                 {items.map(item => (
-                    <div key={item?.id}>
+                    <div onClick={dispatch(clearItem)} key={item?.id}>
                         <NavLink className='pt' to={`/items/${item?.id}`} >
                             <div className="item-card">
                                 <div>

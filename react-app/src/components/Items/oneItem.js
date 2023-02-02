@@ -23,14 +23,14 @@ const ItemDetails = () => {
             .then(() => setIsLoaded(true))
     }, [dispatch, itemId])
 
-    useEffect(() => {
-        async function fetchData() {
-          const response = await fetch('/api/users/');
-          const responseData = await response.json();
-          setUsers(responseData.users);
-        }
-        fetchData();
-      }, []);
+    // useEffect(() => {
+    //     async function fetchData() {
+    //       const response = await fetch('/api/users/');
+    //       const responseData = await response.json();
+    //       setUsers(responseData.users);
+    //     }
+    //     fetchData();
+    //   }, []);
 
     let sum = 0;
     item?.reviews?.forEach(review => {
@@ -72,7 +72,8 @@ const ItemDetails = () => {
                         outlined={true} 
                         />
                         <div>{review.comment}</div>
-                        {users?.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )}
+                        <h4>{review.user}</h4>
+                        {/* {users?.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )} */}
                         </div>
                     ))}
                 </div>)}

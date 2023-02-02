@@ -23,14 +23,15 @@ class Review(db.Model):
             'itemId': self.item_id,
             'rating': self.rating,
             'comment': self.comment,
+            'user': self.user.username
         }
         
-    def to_dict_two(self):
-        return {
-            'id': self.id,
-            'userId': self.user_id,
-            'itemId': self.item_id,
-            'rating': self.rating,
-            'comment': self.comment,
-            'author': self.user.to_dict()
-        }
+    # def to_dict_two(self):
+    #     return {
+    #         'id': self.id,
+    #         'userId': self.user_id,
+    #         'itemId': self.item_id,
+    #         'rating': self.rating,
+    #         'comment': self.comment,
+    #         'author': self.user.to_dict()
+    #     }
