@@ -35,3 +35,15 @@
     /* color: blue; */
     /* background-color: bisque; */
 }
+
+/* .nav:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    transform: scale(1.1);
+  } */
+
+#drop-menu-icon-style:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    transform: scale(1.1);
+  }

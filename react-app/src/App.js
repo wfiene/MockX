@@ -12,6 +12,7 @@ import GetAllItems from './components/Items/allItems';
 import ItemDetails from './components/Items/oneItem';
 import CurrentUserItems from './components/Items/userItems';
 import UserReviews from './components/UserReviews/userReviews';
+import Footer from './components/footer/footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,6 +33,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavBar />
+        <Footer />
         <Switch>
           <Route path='/login' exact={true}>
             <LoginForm />

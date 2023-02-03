@@ -75,14 +75,15 @@ const CreateItemForm = ({ setShowModal }) => {
                     <div className='form'>
                     <h2 id='welcome-edit'>Add an Item</h2>
                     <div className='edititem-content-area'>
+                        <label>Name</label>
                         <input className='input'
                             type='text'
                             placeholder='name'
                             value={name}
                             onChange={updateName}
                         />
-
-                        <select className='input' value={category} onChange={e => setCategory(e.target.value)}>
+                        <label id='label'>Select a category</label>
+                        <select className='select' value={category} onChange={e => setCategory(e.target.value)}>
                             {options.map(option => (
                                 <option key={option.value} value={option.value}>
                                     {option.label}
@@ -95,21 +96,21 @@ const CreateItemForm = ({ setShowModal }) => {
                             value={category}
                             onChange={updateCategory}
                         /> */}
-
+                        <label id='label'>Color</label>
                         <input className='input'
                             type='text'
                             placeholder='color'
                             value={color}
                             onChange={updateColor}
                         />
-
+                        <label id='label'>Image URL</label>
                         <input className='input'
                             type='url'
                             placeholder='image-url'
                             value={image}
                             onChange={updateImage}
                         />
-
+                        <label id='label'>Price</label>
                         <input className='input'
                             type='number'
                             placeholder='price'
@@ -118,7 +119,7 @@ const CreateItemForm = ({ setShowModal }) => {
                             min='5'
                             max='50000'
                         />
-                        <button type='submit'>List Item</button>
+                        <button className='list-item' type='submit'>List Item</button>
                         <div className='edit-item-errors'>
                             <ul>
                                 {errors && validationErrors.length > 0 && validationErrors.map(error => (

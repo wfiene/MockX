@@ -30,9 +30,9 @@ const ProfileButton = () => {
 
     return (
         <>
-            <button className='icon-drop-menu' onClick={openMenu}>
+            <div className='icon-drop-menu' onClick={openMenu}>
                 <img id="drop-menu-icon-style" src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt='' />
-            </button>
+            </div>
             {showMenu && (
                 <div className="text-deco">
                 <div className="profile-dropdown">

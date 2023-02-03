@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from 'react-router-dom'
 import { getItems, clearItem } from "../../store/items"
+import ImageBanner from "../Banner/Banner"
 import './items.css'
 
 const GetAllItems = () => {
@@ -15,6 +16,8 @@ const GetAllItems = () => {
     }, [dispatch])
 
     return (
+        <>
+        <ImageBanner />
         <div id="outer-items">
             <div className="frame">
                 {items.map(item => (
@@ -32,6 +35,7 @@ const GetAllItems = () => {
                 ))}
             </div>
         </div>
+        </>
     )
 }
 

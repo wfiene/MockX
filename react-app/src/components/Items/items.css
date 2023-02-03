@@ -30,6 +30,11 @@
   font-family: sans-serif;
   text-decoration: none;
 }
+.item-card:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+  transform: scale(1.1);
+}
 
 /* .item-card {
     width: 20%;
@@ -96,6 +101,7 @@
   border: 1px solid lightgrey;
   border-radius: 3px;
   width: 400px;
+  height: 250px;
 }
 
 .fake-buttons {
@@ -157,4 +163,9 @@
 .reviews {
   /* border: 1px solid black; */
   padding: 10px;
+}
+
+.pa {
+  /* margin-top: 20px; */
+  padding-top: 43px;
 }

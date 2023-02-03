@@ -1,9 +1,19 @@
 .create-button {
     height: 22px;
     display: flex;
-    margin-top: 15.5px;
+    margin-top: 10px;
+    margin-right: 7px;
     border-radius: 20px;
     background-color: white;
+    border: 1px solid rgb(106, 106, 106);
+    padding: 3px;
+    justify-content: center;
+}
+
+.create-button:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .form {
@@ -23,11 +33,35 @@
 }
 
 .input {
-    margin: 5px;
+    margin: 10px;
     width: 80%;
 
+}
+
+.select{
+    height: 22px;
+    width: 208px;
+    margin-bottom: 10px;
 }
 
 .modal {
     border-radius: 25px;
 }
+
+/* .list-item {
+    background-color: white;
+    border-radius: 25px;
+    margin-bottom: 10px;
+} */
+
+/* .list-item:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    transform: scale(1.1);
+} */
+
+#label {
+    align-items: flex-start;
+    margin-top: 5px;
+}
+

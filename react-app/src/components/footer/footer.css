@@ -1,0 +1,18 @@
+.foot-div {
+    bottom: 0;
+    position: fixed;
+    height: 40px;
+    /* background-color: blue; */
+}
+
+.foot-img {
+    height: 30px;
+    width: 30px;
+    padding: 2px;
+}
+
+.foot-img:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+    transform: scale(1.1);
+  }

@@ -1,0 +1,24 @@
+.review-form{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    /* align-items: center; */
+}
+.review-div{
+    display: flexbox;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* .inputs {
+    margin-bottom: 10px;
+} */
+
+#rev {
+    margin-top: 20px;
+}
+
+.label2{
+    margin: 10px;
+    padding: 5px;
+}

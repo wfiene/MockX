@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, useHistory } from 'react-router-dom'
 import { editReviewThunk, getReviewByUser } from '../../store/review';
+import { DynamicStar } from 'react-dynamic-star';
 
 const EditReviewForm = ({setShowModal, itemId, reviewId}) => {
     const dispatch = useDispatch()
@@ -47,7 +48,8 @@ const EditReviewForm = ({setShowModal, itemId, reviewId}) => {
         }
     }
     return (
-        <div>
+        <div className='review-form'>
+            <div className='review-div'>
             <h3>Leave a review</h3>
             <div>
                 <form onSubmit={handleSubmit}>
@@ -60,7 +62,17 @@ const EditReviewForm = ({setShowModal, itemId, reviewId}) => {
                         />
 
                         <div>
-                            <label>★</label>
+                        <label className='label2'>
+                                <DynamicStar
+                                    rating={rating}
+                                    fullStarColor={"black"}
+                                    // emptyStarColor={'lightgrey'}
+                                    width={18}
+                                    height={30}
+
+                                    outlined={true}
+                                    />
+                            </label>
                             <input
                                 type='number'
                                 min='1'
@@ -69,13 +81,14 @@ const EditReviewForm = ({setShowModal, itemId, reviewId}) => {
                                 onChange={updateRating}
                             />
                         </div>
-                        <button type='submit'>Submit Review</button>
+                        <button id='rev' type='submit'>Submit Review</button>
                     </div>
                 </form>
                 <ul>
                     {errors && validationErrors.length > 0 && validationErrors.map(error => (
                         <li className='review-error-messages' key={error}>{error}</li>))}
                 </ul>
+                </div>
             </div>
         </div>
     )
