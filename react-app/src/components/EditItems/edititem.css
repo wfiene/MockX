@@ -1,0 +1,26 @@
+.edititem-form{
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    /* border-radius: 25px; */
+}
+
+/* .welcome-edit {
+    align-self: center;
+} */
+
+.input {
+    margin: 10px;
+    width: 80%;
+
+}
+
+.select2{
+    height: 22px;
+    width: 163px;
+    margin-bottom: 10px;
+}
+
+label{
+    font-family: sans-serif;
+}

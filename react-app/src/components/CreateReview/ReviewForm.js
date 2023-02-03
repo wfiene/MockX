@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { createReviewThunk } from '../../store/review';
 import { getOneItem } from '../../store/items';
 import { DynamicStar } from 'react-dynamic-star';
+import './review.css'
 
 const ReviewForm = ({ setShowModal }) => {
     const dispatch = useDispatch()
@@ -49,11 +50,12 @@ const ReviewForm = ({ setShowModal }) => {
     }
 
     return (
-        <div>
+        <div className='review-form'>
+            <div className='review-div'>
             <h3>Leave a review</h3>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <div>
+                    <div className='inputs'>
                         <textarea
                             type='text'
                             placeholder='tell us about this item'
@@ -62,7 +64,7 @@ const ReviewForm = ({ setShowModal }) => {
                         />
 
                         <div>
-                            <label>
+                            <label className='label2'>
                                 <DynamicStar
                                     rating={rating}
                                     fullStarColor={"black"}
@@ -81,13 +83,14 @@ const ReviewForm = ({ setShowModal }) => {
                                 onChange={updateRating}
                             />
                         </div>
-                        <button type='submit'>Submit Review</button>
+                        <button id='rev' type='submit'>Submit Review</button>
                     </div>
                 </form>
                 <ul>
                     {errors && validationErrors.length > 0 && validationErrors.map(error => (
                         <li className='review-error-messages' key={error}>{error}</li>))}
                 </ul>
+                </div>
             </div>
         </div>
     )

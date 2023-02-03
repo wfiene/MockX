@@ -72,7 +72,7 @@ const ItemDetails = () => {
                         outlined={true} 
                         />
                         <div>{review.comment}</div>
-                        <h4>{review.user}</h4>
+                        <h4>-- {review.user}</h4>
                         {/* {users?.map(user => review.userId === user.id ? <h4>{user.username}</h4> : null )} */}
                         </div>
                     ))}
@@ -92,7 +92,7 @@ const ItemDetails = () => {
                             <h3 >Buy For ${Math.floor(item?.price * 1.2)}</h3>
                         </div>
                     </div>
-                    <h3 className="sf no-link">Sell for ${Math.floor(item?.price * 1.1)} or ask for more</h3>
+                    <h3 className="sf no-link pa">Sell for ${Math.floor(item?.price * 1.1)} or ask for more</h3>
                 </div>
                 
             </div>

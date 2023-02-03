@@ -111,6 +111,12 @@
     color: blue;
 }
 
+.submit-button:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .welcome-back-text{
     font-family: sans-serif;
 }

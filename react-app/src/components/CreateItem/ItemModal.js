@@ -8,7 +8,7 @@ function CreateItemModal({item}) {
 
     return (
         <>
-        <button className="create-button" onClick={() => setShowModal(true)}>List an Item</button>
+        <div className="create-button" onClick={() => setShowModal(true)}>List an Item</div>
         {showModal && (
           <Modal className='modal' onClose={() => setShowModal(false)}>
             <CreateItemForm setShowModal={setShowModal}/>
