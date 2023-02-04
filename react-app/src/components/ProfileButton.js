@@ -36,10 +36,10 @@ const ProfileButton = () => {
             {showMenu && (
                 <div className="text-deco">
                 <div className="profile-dropdown">
-                <div className="text">Hello {user.username}!</div>
+                <div className="text">Hello {user?.username}!</div>
                 <div className="buttons">
-                <NavLink className='nav' to={`/users/${user.id}/items`}><button classname='button'>My Items</button></NavLink>
-                <NavLink to={`/users/${user.id}/reviews`}><button classname='button'>My Reviews</button></NavLink>
+                <NavLink className='nav' to={`/users/${user?.id}/items`}><button classname='button'>My Items</button></NavLink>
+                <NavLink className='nav' to={`/users/${user?.id}/reviews`}><button classname='button'>My Reviews</button></NavLink>
                 <div className="button"><LogoutButton className='button'/></div>
                 </div>
                 </div>

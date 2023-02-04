@@ -61,6 +61,7 @@ const ReviewForm = ({ setShowModal }) => {
                             placeholder='tell us about this item'
                             value={review}
                             onChange={updateReview}
+                            
                         />
 
                         <div>
