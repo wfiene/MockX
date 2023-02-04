@@ -9,9 +9,6 @@ const ImageBanner = () => {
         'https://www.alpine.com.au/wp-content/uploads/2019/03/Products-Group-Image-Banner.jpg',
         'https://i.pinimg.com/originals/bb/72/d6/bb72d6d9bd773b903b97ade5cb30a5f2.jpg',
         'https://cdn.shopify.com/s/files/1/0650/8609/files/rolex_preowned_Banner_1.jpg?v=1619813418',
-
-
-
 ]
 
     const [currentIndex, setCurrentIndex] = useState(0);

@@ -20,7 +20,7 @@ const CurrentUserItems = () => {
   }, [dispatch])
 
   if (!items?.length) {
-    return (<h5 className="nothing-here">Nothing here... try listing an item!</h5>)
+    return (<h2 className="nothing-here">Nothing here... try listing an item!</h2>)
   } else {
     return isLoaded && (items?.map(item => (
       <div id="outer-most-my-items">

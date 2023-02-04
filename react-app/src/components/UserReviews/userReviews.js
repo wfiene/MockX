@@ -14,7 +14,7 @@ const UserReviews = () => {
     const user = useSelector(state => state.session.user)
     const reviews = reviewObj? Object.values(reviewObj) : null
     const items = Object.values(itemObj)
-    const userId = user.id
+    const userId = user?.id
     console.log('-----reviews------', reviews)
     console.log('-------items-------', items)
     const dispatch = useDispatch()
@@ -25,6 +25,9 @@ const UserReviews = () => {
     }, [dispatch])
 
 
+    if (!reviews.length) {
+        return (<h2>Nothing here... try leaving a review!</h2>)
+    }
     return (
         <div className="outer-reviews">
             {reviews?.map(review => (

@@ -50,7 +50,7 @@ const EditReviewForm = ({setShowModal, itemId, reviewId}) => {
     return (
         <div className='review-form'>
             <div className='review-div'>
-            <h3>Leave a review</h3>
+            <h3>Edit your review</h3>
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>

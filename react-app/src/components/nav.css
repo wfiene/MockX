@@ -78,6 +78,7 @@
     width: 150px;
     border-radius: 5px;
     height: fit-content;
+    z-index: 1;
 }
 
 .user-links {
