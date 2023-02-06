@@ -24,11 +24,11 @@ const ImageBanner = () => {
     return (
         <div className="banner-container">
             <div className="banner">
-                <button className="prev-button" onClick={handlePrev}>Previous</button>
+                <button className="prev-button" onClick={handlePrev}>⫷</button>
                 <img src={images[currentIndex]} 
                 alt="Banner"
                 />
-                <button className="next-button" onClick={handleNext}>Next</button>
+                <button className="next-button" onClick={handleNext}>⫸</button>
             </div>
             {/* <div className="buttons">
             </div> */}

@@ -10,8 +10,6 @@ const ItemDetails = () => {
     const itemObj = useSelector(state => state.items.oneItem)
 
     const item = Object.values(itemObj)[0]
-    
-    console.log("------------item------------", item)
     let { itemId } = useParams()
     // console.log("--------item-id---------", itemId)
     const dispatch = useDispatch()
@@ -22,15 +20,6 @@ const ItemDetails = () => {
         dispatch(getOneItem(itemId))
             .then(() => setIsLoaded(true))
     }, [dispatch, itemId])
-
-    // useEffect(() => {
-    //     async function fetchData() {
-    //       const response = await fetch('/api/users/');
-    //       const responseData = await response.json();
-    //       setUsers(responseData.users);
-    //     }
-    //     fetchData();
-    //   }, []);
 
     let sum = 0;
     item?.reviews?.forEach(review => {
