@@ -36,8 +36,14 @@ A live version of this site can be viewed by clicking the link at the top of thi
 
 <h2 align="center"> Current Features </h2>
 
+<p align='center'>
 Any user has the ability to view all items listed on the site
+  </p>
+<p align='center'>
 Logged in users have the ability to;
+  </p>
+  
+  
 - Post new items
 - Leave reviews on items they don't own or have not already left a review on
 - They can also edit and delete both their posted items or reviews they have left
