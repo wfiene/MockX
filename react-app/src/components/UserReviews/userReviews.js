@@ -25,7 +25,7 @@ const UserReviews = () => {
     }, [dispatch])
 
 
-    if (!reviews.length) {
+    if (!reviews?.length) {
         return (<h2>Nothing here... try leaving a review!</h2>)
     }
     return (
