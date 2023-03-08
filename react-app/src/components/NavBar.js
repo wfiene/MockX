@@ -6,6 +6,7 @@ import LogoutButton from './auth/LogoutButton';
 import ProfileButton from './ProfileButton';
 import CurrentUserItems from './Items/userItems';
 import CreateItemModal from './CreateItem/ItemModal';
+import CartButton from './cart/cartButton';
 import './nav.css'
 
 const NavBar = () => {
@@ -15,6 +16,7 @@ const NavBar = () => {
   if (sessionUser) {
     sessionLinks = (
       <div className='user-links'>
+        <CartButton />
         <CreateItemModal />
         <ProfileButton />
       </div>

@@ -17,6 +17,7 @@ class Item(db.Model):
     
     reviews = db.relationship('Review', back_populates='item', cascade='all, delete')
     user = db.relationship('User', back_populates='items')
+    # cart = db.relationship('Cart', back_populates='items')
     
     def to_dict(self):
         return {

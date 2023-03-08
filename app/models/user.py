@@ -16,6 +16,7 @@ class User(db.Model, UserMixin):
     
     items = db.relationship('Item', back_populates='user')
     reviews = db.relationship('Review', back_populates='user')
+    carts = db.relationship('Cart', backref='user')
 
     @property
     def password(self):

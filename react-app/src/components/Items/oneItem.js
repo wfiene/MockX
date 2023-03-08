@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from 'react-router-dom'
-import { getOneItem } from "../../store/items"
+import { getOneItem } from "../../store/items"; 
+import AddCart from '../cart/CartModal'
 import './items.css'
 import { DynamicStar } from 'react-dynamic-star';
 import ReviewFormModal from "../CreateReview"
 
 const ItemDetails = () => {
+    const sessionUser = useSelector(state => state.session.user)
     const itemObj = useSelector(state => state.items.oneItem)
 
     const item = Object.values(itemObj)[0]
@@ -15,11 +17,25 @@ const ItemDetails = () => {
     const dispatch = useDispatch()
     const [isLoaded, setIsLoaded] = useState(false)
     const [users, setUsers] = useState([]);
+    // const [quantity, setQuantity] = useState(1)
 
     useEffect(() => {
         dispatch(getOneItem(itemId))
             .then(() => setIsLoaded(true))
     }, [dispatch, itemId])
+
+    // let payload = {
+    //     user_id: sessionUser?.id,
+    //     item_id: item?.id,
+    //     quantity: quantity,
+    //     total: item?.price
+    // }
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault()
+    //     dispatch(addCartItem(payload))
+        
+    // }
 
     let sum = 0;
     item?.reviews?.forEach(review => {
@@ -45,6 +61,9 @@ const ItemDetails = () => {
                 </div>
                 <div >
                     {item?.image && <img className="detail-image" src={item?.image} />}
+                </div>
+                <div>
+                    <AddCart item={item} sessionUser={sessionUser}/>
                 </div>
                 <h3>MSRP ${item?.price}</h3>
                 {item?.reviews && (
