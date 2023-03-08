@@ -3,8 +3,8 @@ from .db import db, environment, SCHEMA, add_prefix_for_prod
 class Cart(db.Model):
     __tablename__ = 'cart'
     
-    if environment == 'production':
-        __table_args__ == {'scheme': SCHEMA}
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
         
     
     id = db.Column(db.Integer, primary_key=True)
