@@ -13,6 +13,7 @@ import ItemDetails from './components/Items/oneItem';
 import CurrentUserItems from './components/Items/userItems';
 import UserReviews from './components/UserReviews/userReviews';
 import Footer from './components/footer/footer';
+import UserCart from './components/cart/cart';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -37,6 +38,9 @@ function App() {
         <Switch>
           <Route path='/login' exact={true}>
             <LoginForm />
+          </Route>
+          <Route path='/users/:userId/cart' exact={true}>
+            <UserCart />
           </Route>
           <Route path='/users/:userId/items' exact={true}>
             <CurrentUserItems />
