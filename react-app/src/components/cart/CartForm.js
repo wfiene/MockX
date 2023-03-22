@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addCartItem } from "../../store/cart";
 
-const AddCartForm = ({item, sessionUser, setShowModal}) => {
+const AddCartForm = ({ item, sessionUser, setShowModal }) => {
     const dispatch = useDispatch()
     const [quantity, setQuantity] = useState(1)
 
@@ -19,21 +19,26 @@ const AddCartForm = ({item, sessionUser, setShowModal}) => {
         e.preventDefault()
         dispatch(addCartItem(payload))
         setShowModal(false)
-        
+
     }
 
     return (
-        <div>
+
+        <div id="cart-modal">
             <form onSubmit={handleSubmit}>
-            <label>Select Quantity</label>
-            <input 
-                type="number"
-                min='1'
-                max='100'
-                value={quantity}
-                onChange={updateQuantity}
-            />
-            <button type='submit'>Add To Cart</button>
+                <div className="cart-content">
+                    <label className="pa">Select Quantity</label>
+                    <input
+                        type="number"
+                        min='1'
+                        max='100'
+                        value={quantity}
+                        onChange={updateQuantity}
+                        className='pa'
+                    />
+                    <button className="pa mt" type='submit'>Add To Cart</button>
+                </div>
+
             </form>
         </div>
     )

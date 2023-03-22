@@ -21,19 +21,28 @@ const UserCart = () => {
         dispatch(getItems());
     }, [dispatch])
 
+    const handleCheckout = () => {
+        window.alert('Thanks for your order')
+        carts?.forEach(cart => {
+            dispatch(deleteCartItem(cart?.id))
+        })
+        setCartId(null)
+        dispatch(getCart(userId))
+    }
+
     const setCart = (num) => setCartId(num)
 
     const plusQuantity = (num) => setQuantity(num + 1)
 
     const minusQuantity = (num) => {
         if (num >= 2) {
-          setQuantity(num - 1);
+            setQuantity(num - 1);
         }
         else {
             setQuantity(1)
         }
-      }
-      
+    }
+
 
 
     const setItem = (num) => setItemId(num)
@@ -53,7 +62,7 @@ const UserCart = () => {
                     quantity: quantity,
                     // total: total ? total : sum,
                 };
-                
+
                 await dispatch(updateCartItem(payload));
                 console.log('failed')
                 console.log('cart id', cartId)
@@ -75,44 +84,45 @@ const UserCart = () => {
     })
     return (
         <div className="outer">
-        <div className="carts-container">
-            {carts?.map(cart => (
-                <div className="cart-box">
-                    <div className="box-one">
-                        {items?.map(item => item?.id === cart?.itemId ? <div className="img-box"><img className='cart-image' src={item?.image}></img></div> : null)}
-                        <div className="tidy">
-                        <div className="cart-text">
-                        <div>Price: ${cart?.total}</div>
-                        <div>&nbsp;</div>
-                        <div>Quantity: {cart?.quantity}</div>
-                        </div>
-                        <div id="cart-buttons">
-                        <button onClick={() => {
-                            setCart(cart?.id);
-                            minusQuantity(cart?.quantity);
-                            setItem(cart?.itemId);
-                            setNewTotal();
-                            console.log('minus button')
-                        }}>-</button>
-                        <button onClick={() => {
-                            setCart(cart?.id);
-                            plusQuantity(cart?.quantity);
-                            setItem(cart?.itemId);
-                            setNewTotal();
-                            console.log('plus button')
-                        }}>+</button>
-                        <button onClick={() => dispatch(deleteCartItem(cart?.id, () => {
-                            // Callback function to be executed after deletion is completed
-                            dispatch(getCart(userId));
-                            setCartId(null);
-                        }))}>Delete Item</button>
-                        </div>
+            <div className="carts-container">
+                {carts?.map(cart => (
+                    <div className="cart-box">
+                        <div className="box-one">
+                            {items?.map(item => item?.id === cart?.itemId ? <div className="img-box"><img className='cart-image' src={item?.image}></img></div> : null)}
+                            <div className="tidy">
+                                <div className="cart-text">
+                                    <div>Price: ${cart?.total}</div>
+                                    <div>&nbsp;</div>
+                                    <div>Quantity: {cart?.quantity}</div>
+                                </div>
+                                <div id="cart-buttons">
+                                    <button onClick={() => {
+                                        setCart(cart?.id);
+                                        minusQuantity(cart?.quantity);
+                                        setItem(cart?.itemId);
+                                        setNewTotal();
+                                        console.log('minus button')
+                                    }}>-</button>
+                                    <button onClick={() => {
+                                        setCart(cart?.id);
+                                        plusQuantity(cart?.quantity);
+                                        setItem(cart?.itemId);
+                                        setNewTotal();
+                                        console.log('plus button')
+                                    }}>+</button>
+                                    <button onClick={() => dispatch(deleteCartItem(cart?.id, () => {
+                                        // Callback function to be executed after deletion is completed
+                                        dispatch(getCart(userId));
+                                        setCartId(null);
+                                    }))}>Delete Item</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ))}
-            <h2>Total: ${sum}</h2>
-        </div>
+                ))}
+                <h2>Total: ${sum}</h2>
+                <button onClick={handleCheckout}>Check Out</button>
+            </div>
         </div>
     )
 }

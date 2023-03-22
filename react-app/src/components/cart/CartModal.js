@@ -13,7 +13,7 @@ function AddCart({item}) {
     const carts = cartObj ? Object.values(cartObj) : null
 
     useEffect(() => {
-        dispatch(getCart(sessionUser.id))
+        dispatch(getCart(sessionUser?.id))
     }, [dispatch])
 
     let userCarts;

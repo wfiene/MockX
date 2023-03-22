@@ -89,7 +89,7 @@ const ItemDetails = () => {
                     <ReviewFormModal />
                 </div>
             </div>
-            <div className="decoration-side">
+            {/* <div className="decoration-side">
                 <div className="outline-box">
                     <div className="fake-buttons">
                         <div className="br dfjc no-link">
@@ -103,7 +103,7 @@ const ItemDetails = () => {
                     <h3 className="sf no-link pa">Sell for ${Math.floor(item?.price * 1.1)} or ask for more</h3>
                 </div>
                 
-            </div>
+            </div> */}
         </div>
     )
 }
