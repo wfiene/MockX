@@ -64,11 +64,6 @@ const UserCart = () => {
                 };
 
                 await dispatch(updateCartItem(payload));
-                console.log('failed')
-                console.log('cart id', cartId)
-                console.log('item id', itemId)
-                console.log('quantity', quantity)
-                console.log('total', total)
             }
         };
         update();
