@@ -15,8 +15,7 @@ const UserReviews = () => {
     const reviews = reviewObj? Object.values(reviewObj) : null
     const items = Object.values(itemObj)
     const userId = user?.id
-    console.log('-----reviews------', reviews)
-    console.log('-------items-------', items)
+   
     const dispatch = useDispatch()
 
     useEffect(() => {
