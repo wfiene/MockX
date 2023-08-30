@@ -29,10 +29,10 @@ def seed_items():
         name='G-Shock, waterproof', category='watch', color='black-gold', image='https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/G/GA/GA1/GA-110GB-1A/assets/GA-110GB-1A_Seq1.png', price=150, owner_id=2
     )
     hat = Item(
-        name='Rebel 8 Mesh trucker cap', category='hats', color='black', image='https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.layup.ch%2Frebel8-trucker-back-cap-logo-script-black-p-15262.html%3Flanguage%3Den&psig=AOvVaw1WOH5g3_cOBB5KK5aUebd4&ust=1693498780970000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCODw79vkhIEDFQAAAAAdAAAAABAH', price=40, owner_id=3
+        name='Rebel 8 Mesh trucker cap', category='hats', color='black', image='https://www.layup.ch/images/LOGO-SCRIPT-TRUCKER-CAP-BLACK-1.jpg', price=40, owner_id=3
     )
     supreme = Item(
-        name='White Supreme Hoodie', category='apparel', color='white', image='https://www.google.com/url?sa=i&url=https%3A%2F%2Fgoldpeachapparel.com%2Fproducts%2Fsupreme-youth-hoodie-various-colors&psig=AOvVaw2M48KNJiGbqn45mx7Kyu3M&ust=1693498888977000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCNjeyY_lhIEDFQAAAAAdAAAAABAK', price=200, owner_id=5
+        name='White Supreme Hoodie', category='apparel', color='white', image='https://goldpeachapparel.com/cdn/shop/products/white_supreme_youth_hoodie.jpg?v=1567243861', price=200, owner_id=5
     )
     
     db.session.add(rtx_4090)
