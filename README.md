@@ -1,148 +1,68 @@
-# Flask React Project
 
-This is the starter for the Flask React project.
+<h1 align="center"> 
 
-## Getting started
-1. Clone this repository (only this branch)
+[MockX](https://mockx.onrender.com)
 
-2. Install dependencies
+</h1>
 
-      ```bash
-      pipenv install -r requirements.txt
-      ```
+<h2 align="center"> MockX is a StockX/Etsy hybrid clone </h2>
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
-
-4. Make sure the SQLite3 database connection URL is in the **.env** file
-
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
-
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
-
-   ```bash
-   pipenv shell
-   ```
-
-   ```bash
-   flask db upgrade
-   ```
-
-   ```bash
-   flask seed all
-   ```
-
-   ```bash
-   flask run
-   ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+<p align='center'>
+A live version of this site can be viewed by clicking the link at the top of this readme. It is being hosted on a free hosing site so it may take a few seconds to load on the first visit.
+</p>
 
 
-## Deployment through Render.com
 
-First, refer to your Render.com deployment articles for more detailed
-instructions about getting started with [Render.com], creating a production
-database, and deployment debugging tips.
+<h2 align="center"> Tech Stack </h2>
 
-From the [Dashboard], click on the "New +" button in the navigation bar, and
-click on "Web Service" to create the application that will be deployed.
+<div align="center">
 
-Look for the name of the application you want to deploy, and click the "Connect"
-button to the right of the name.
+<img src="https://camo.githubusercontent.com/222fa9761f81c629e3cb83efa13d8469108c8e6d9c62ae6afcd1dceb4256d8fb/68747470733a2f2f63646e2e776f726c64766563746f726c6f676f2e636f6d2f6c6f676f732f707974686f6e2d352e737667" width="75" height="75">   <img src="https://www.seekpng.com/png/detail/875-8753366_flask-framework-logo-svg.png" width="75" height="75">   [<img src="https://user-images.githubusercontent.com/105324675/190725431-5033a82c-51ff-4a9a-b9ff-48ad606a2a5e.svg" width="75" height="75">](https://www.javascript.com/) [<img src="https://user-images.githubusercontent.com/105324675/190726531-63e5fa0c-5e9a-4e12-a4df-ac578bdfefb3.svg" width="75" height="75">](https://whatwg.org/) [<img src="https://user-images.githubusercontent.com/105324675/190727242-21af03e1-b793-4257-bdc5-14996fb8da63.svg" width="75" height="75">](https://www.css3.com/) [<img src="https://user-images.githubusercontent.com/105324675/190727472-da7d5a51-ef2e-4f71-b90c-333debd2d147.svg" width="75" height="75">](https://reactjs.org/) [<img src="https://user-images.githubusercontent.com/105324675/190727697-f61e28b7-1597-4be0-9dc4-dbc443790f86.svg" width="75" height="75">](https://redux.js.org/) [<img src="https://user-images.githubusercontent.com/105324675/190729715-5aeed1a2-0914-413e-ac4b-de23aa7ed802.svg" width="75" height="75">](https://nodejs.org/en) [<img src="https://user-images.githubusercontent.com/105324675/190729918-773ddf18-90d3-4d52-aa81-c02731d413bf.svg" width="75" height="75">](https://www.npmjs.com/)
 
-Now, fill out the form to configure the build and start commands, as well as add
-the environment variables to properly deploy the application.
+</div>
 
-### Part A: Configure the Start and Build Commands
+<h2 align="center"> Database </h2>
 
-Start by giving your application a name.
+<div align="center">
 
-Leave the root directory field blank. By default, Render will run commands from
-the root directory.
+[<img src="https://user-images.githubusercontent.com/105324675/190727354-8f322958-5b34-4c96-b052-358d06d0d9ef.svg" width="75" height="75">](https://www.postgresql.org/) <img src="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/_static/flask-sqlalchemy-logo.png" width="75" height="75">
 
-Make sure the Environment field is set set to "Python 3", the Region is set to
-the location closest to you, and the Branch is set to "main".
+</div>
 
-Next, add your Build command. This is a script that should include everything
-that needs to happen _before_ starting the server.
+<h2 align="center"> Home Page </h2>
 
-For your Flask project, enter the following command into the Build field, all in
-one line:
+![home page 2](https://user-images.githubusercontent.com/104230573/216888583-462eeda8-bff2-4d57-affc-41f1f0864946.png)
 
-```shell
-# build command - enter all in one line
-npm install --prefix react-app &&
-npm run build --prefix react-app &&
-pip install -r requirements.txt &&
-pip install psycopg2 &&
-flask db upgrade &&
-flask seed all
-```
 
-This script will install dependencies for the frontend, and run the build
-command in the __package.json__ file for the frontend, which builds the React
-application. Then, it will install the dependencies needed for the Python
-backend, and run the migration and seed files.
+<h2 align="center"> Current Features </h2>
 
-Now, add your start command in the Start field:
+<p align='center'>
+Any user has the ability to view all items listed on the site
+  </p>
+<p align='center'>
+Logged in users have the ability to;
+  </p>
+  
+  
+- Post new items
+- Leave reviews on items they don't own or have not already left a review on
+- They can also edit and delete both their posted items or reviews they have left
 
-```shell
-# start script
-gunicorn app:app
-```
+<h2 align="center"> Upcoming Features </h2>
 
-_If you are using websockets, use the following start command instead for increased performance:_
+- Shopping Cart
+- Search Option
+- Filter by Category
+- Favorites/Following page
 
-`gunicorn --worker-class eventlet -w 1 app:app`
+<h2 align="center"> To view this locally... </h2>
 
-### Part B: Add the Environment Variables
+- Clone the repo
+- Make a .env file with the following values...
+  - SECRET_KEY=random key here
+  - DATABASE_URL=sqlite:///dev.db
+- In the terminal run 'pipenv shell' and the pipenv install in the root directory
+- cd into the react app directory and run 'npm install'
+- back in the root directory and shell run 'flask db init && flask db migrate && flask db upgrade && flask seed all && flask run'
+- back in the react app directry run 'npm start'
 
-Click on the "Advanced" button at the bottom of the form to configure the
-environment variables your application needs to access to run properly. In the
-development environment, you have been securing these variables in the __.env__
-file, which has been removed from source control. In this step, you will need to
-input the keys and values for the environment variables you need for production
-into the Render GUI.
-
-Click on "Add Environment Variable" to start adding all of the variables you
-need for the production environment.
-
-Add the following keys and values in the Render GUI form:
-
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-- REACT_APP_BASE_URL (use render.com url, located at top of page, similar to
-  https://this-application-name.onrender.com)
-
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
-
-Add the following keys and values:
-
-- DATABASE_URL (copy value from Internal Database URL field)
-
-_Note: Add any other keys and values that may be present in your local __.env__
-file. As you work to further develop your project, you may need to add more
-environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment._
-
-Next, choose "Yes" for the Auto-Deploy field. This will re-deploy your
-application every time you push to main.
-
-Now, you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your build and
-start commands being executed, and see any errors in the build process.
-
-When deployment is complete, open your deployed site and check to see if you
-successfully deployed your Flask application to Render! You can find the URL for
-your site just below the name of the Web Service at the top of the page.
-
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/# MockX
