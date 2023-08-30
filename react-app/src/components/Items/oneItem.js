@@ -44,20 +44,24 @@ const ItemDetails = () => {
 
     let average = sum / item?.reviews?.length
 
+    
+
     return (
         <div id="outer-most-details">
             <div id="item-page">
                 <div id="header">
                     <h2>{item?.name}</h2>
+                    {item?.reviews && item.reviews.length > 0 ? (
                     <DynamicStar 
-                    rating={average}
-                    fullStarColor={"black"}
-                    // emptyStarColor={'lightgrey'}
-                    width={18}
-                    height={30}
-
-                    outlined={true}
+                        rating={average}
+                        fullStarColor={"black"}
+                        width={18}
+                        height={30}
+                        outlined={true}
                     />
+                ) : (
+                    <p>No reviews yet</p>
+                )}
                 </div>
                 <div >
                     {item?.image && <img className="detail-image" src={item?.image} />}
